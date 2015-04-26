@@ -11,9 +11,19 @@
 		@foreach ($votes as $vote)
 			<li class="list-group-item">
 				
-				<strong>{{ $vote->vote_title }}</strong>
-							
 				
+
+
+				<a href="{{ url('vote/edit', array($vote->id), false) }}"><strong>{{ $vote->vote_title }}</strong></a>
+				<!-- {{Form::model($vote,array('route'=>array('votes.update',$vote->id)))}}			
+
+				{{Form::text('vote_title')}}
+
+				<input type="submit"  />
+				{{ Form::close() }} -->
+
+
+				<!-- {{link_to_route('home','yy');}}  -->
 			</li>
 		@endforeach
 	</ul>

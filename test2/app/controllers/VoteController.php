@@ -118,16 +118,18 @@ class VoteController extends \BaseController {
 		//修改部分
 	public function update($id)
 	{
-		$data = Input::get();
+		//$data = Input::get();
 		$vote = Vote::find($id);
 
+		$vote -> fill(Input::all());
+		
 
 
-		if(isset($data['vote_title'])){
-			$vote->vote_title = $data['vote_title'];
+		// if(isset($data['vote_title'])){
+		// 	$vote->vote_title = $data['vote_title'];
 
 			//return Response::json($vote);
-		}
+		
 
 		// if(isset($data['done'])){
 		// 	$todo->done = $data['done'];
@@ -140,7 +142,7 @@ class VoteController extends \BaseController {
 						'msg' => '更新成功！']
 		];
 
-		return Response::json($arr);
+		return Redirect::to('/');
 	}
     //修改部分 end
 
@@ -155,5 +157,12 @@ class VoteController extends \BaseController {
 		//
 	}
 
+
+public function update2($id)
+	{
+		$arr = 'o';
+		return Response::json($arr);
+	}
+    //修改部分 end
 
 }

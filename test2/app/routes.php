@@ -12,6 +12,13 @@
 */
 Route::get('/', ['as' => 'home', 'uses' => 'VoteController@index']);
 //Route::get('/', ['as' => 'home']);
+Route::get('vote/edit/{id}', array('as' => 'vote.edit', function($id) 
+    {
+        // return our view and Vote information
+        return View::make('tasks.vote-edit') // pulls app/views/nerd-edit.blade.php
+            ->with('vote', Vote::find($id));
+    }));
+
 
 Route::delete('/api/todos/clean', 'TodoController@clean');
 Route::resource('/api/todos', 'TodoController');
@@ -24,3 +31,4 @@ Route::resource('/api/votes', 'VoteController');
 Route::delete('/api/votes/clean', 'VoteController@clean');
 
 Route::resource('votes', 'VoteController');
+
