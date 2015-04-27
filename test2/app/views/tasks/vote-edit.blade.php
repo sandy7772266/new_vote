@@ -1,8 +1,5 @@
 @extends('layouts.master')
 
-
-
-
 @section('content')
 <div class="col-md-6">
 	<h3>Votes ~ edit</h3>

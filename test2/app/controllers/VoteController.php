@@ -38,7 +38,11 @@ class VoteController extends \BaseController {
 
 		$votes = Vote::get();
 
-		return View::make('tasks.index', compact('votes'));	
+		// if ($s==null){
+
+		 return View::make('tasks.index', compact('votes'));	
+
+		// }
 	}
 
 
